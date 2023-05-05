@@ -83,6 +83,10 @@ class Comments extends Component {
     })
   }
 
+  onChangeCommentInput = event => {
+    this.setState({commentInput: event.target.value})
+  }
+
   render() {
     const {nameInput, commentInput, commentsList} = this.state
 
@@ -121,10 +125,10 @@ class Comments extends Component {
             />
           </div>
           <hr className="line" />
-          <p>
+          <h1>
             <span> {commentsList.length} </span>
             Comments
-          </p>
+          </h1>
           <ul className="comments-list"> {this.renderCommentsList()}</ul>
         </div>
       </div>

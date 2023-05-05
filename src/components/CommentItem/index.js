@@ -6,8 +6,8 @@ import './index.css'
 const CommentItem = props => {
   const {commentDetails} = props
   const {id, name, comment, isLiked, initialClassName, date} = commentDetails
-  const initial = name ? name[0].toUpperCase(): ""
-  const likeTextClassName = 'button active' : 'button'
+  const initial = name ? name[0].toUpperCase() : ''
+  const likeTextClassName = isLiked ? 'button active' : 'button'
   const likeImageUrl = isLiked
     ? 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
@@ -37,7 +37,7 @@ const CommentItem = props => {
           <p className="comment"> {comment} </p>
         </div>
       </div>
-        <div className="buttons-container">
+      <div className="buttons-container">
         <div className="like-container">
           <img src={likeImageUrl} alt="like" className="like-image" />
           <button
